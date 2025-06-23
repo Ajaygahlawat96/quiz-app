@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Test Your Knowledge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <h1 class="text-center mb-4">Quiz Master</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Welcome to Quiz Master!</h2>
+                    <p class="card-text text-center">Test your knowledge across various categories</p>
+                    <div class="d-grid gap-2">
+                        <button id="start-quiz" class="btn btn-primary btn-lg">Start Quiz</button>
+                        <button id="view-leaderboard" class="btn btn-secondary">View Leaderboard</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Selection Screen -->
+        <div id="category-screen" class="screen">
+            <h2 class="text-center mb-4">Select a Category</h2>
+            <div class="row" id="category-grid">
+                <!-- Categories will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress mb-4">
+                <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 id="question-text" class="card-title"></h3>
+                    <div id="options-container" class="mt-4">
+                        <!-- Options will be dynamically added here -->
+                    </div>
+                    <div class="mt-4 d-flex justify-content-between">
+                        <button id="next-question" class="btn btn-primary" disabled>Next Question</button>
+                        <span id="timer" class="badge bg-warning">Time: 30s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Quiz Complete!</h2>
+                    <div class="score-display mb-4">
+                        <h3>Your Score: <span id="final-score">0</span></h3>
+                        <p>Correct Answers: <span id="correct-answers">0</span></p>
+                        <p>Time Taken: <span id="time-taken">0</span> seconds</p>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button id="play-again" class="btn btn-primary">Play Again</button>
+                        <button id="share-score" class="btn btn-secondary">Share Score</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboard-screen" class="screen">
+            <h2 class="text-center mb-4">Leaderboard</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <!-- Leaderboard entries will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="back-to-home" class="btn btn-primary mt-3">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
